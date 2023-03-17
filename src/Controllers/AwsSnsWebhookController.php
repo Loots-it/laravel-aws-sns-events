@@ -14,7 +14,7 @@ class AwsSnsWebhookController extends Controller
     public function handle(Request $request): Response
     {
         $snsMessage = AwsSnsMessage::fromInput($request->input());
-        $snsEventClass = config('aws_sns.sns-topics')[$snsMessage->topicArn] ?? null;
+        $snsEventClass = config('aws_sns.topics')[$snsMessage->topicArn] ?? null;
         abort_unless($snsEventClass, 404);
 
         return match ($snsMessage->type)
