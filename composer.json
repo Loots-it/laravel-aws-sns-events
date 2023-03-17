@@ -16,5 +16,12 @@
     },
     "require-dev": {
         "orchestra/testbench": "^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LootsIt\\LaravelSns\\Providers\\AwsSnsServiceProvider"
+            ]
+        }
     }
 }
